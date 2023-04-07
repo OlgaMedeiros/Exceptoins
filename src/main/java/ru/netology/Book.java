@@ -1,6 +1,6 @@
 
 package ru.netology;
-public class Book extends Exceptions {          //book - дочерний класс ; Product - родительский класс
+public class Book extends Product {          //book - дочерний класс ; Product - родительский класс
     private String name;
     private String author;
 

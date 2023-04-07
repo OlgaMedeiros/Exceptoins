@@ -1,5 +1,6 @@
 package ru.netology;
 
+
 public class Repository {
     private Product[] products = new Product[0];  //изначально в массиве Product 0 ячеек
 
@@ -18,7 +19,10 @@ public class Repository {
     }
 
     public void removeById(int id) {  //удаляем продукт по Id
-
+        Product[] productId = findById(id);
+        if (productId == null) {
+            throw new NotFoundException(id);
+        }
         Product[] tmp = new Product[products.length - 1];
         int copyToIndex = 0;
         for (Product product : products) {
@@ -31,8 +35,6 @@ public class Repository {
         }
         products = tmp;
     }
-
-
     public Product[] findById(int id) {
         for (Product product : products) {
             if (product.getId() == id) {
@@ -46,4 +48,6 @@ public class Repository {
         return products;
     }
 }
-}
+
+
+
