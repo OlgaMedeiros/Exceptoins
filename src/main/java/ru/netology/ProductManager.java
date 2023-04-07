@@ -7,8 +7,8 @@ public class ProductManager {
         this.repository =repository;
     }
 
-    public void add(Book book) {
-        repository.save(book);
+    public void add(Product product) {
+        repository.save(product);
     }
 
 
@@ -35,7 +35,4 @@ public class ProductManager {
             return false;
         }
     }
-}
-
-
 }
